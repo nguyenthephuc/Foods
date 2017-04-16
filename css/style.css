@@ -1,0 +1,231 @@
+.limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.about_me {
+    color: #fff !important;
+    background: #292429 !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.context-menu{
+    z-index: 1000;
+    width: 200px;
+    height: auto;
+    box-shadow: 0 0 20px 0 #ccc;
+    position: fixed;
+    display: none;
+    background: #fff;
+}
+
+.context-menu ul{
+    list-style: none;
+    padding: 5px 0px 5px 0px;
+}
+
+.context-menu ul li:not(.separator){
+    padding: 10px 5px 10px 5px;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+}
+
+.context-menu ul li:hover{
+    background: #eee;
+    border-left: 4px solid #666;
+}
+
+.separator{
+    height: 1px;
+    background: #dedede;
+    margin: 2px 0px 2px 0px;
+}
+
+.hot_key {
+    color: gray;
+    font-style: italic;
+    float: right;
+    right: 5px;
+}
+
+#fb_quick_share_ext-spotlight_wrapper *::-webkit-scrollbar {
+  width: 8px;
+}
+#fb_quick_share_ext-spotlight_wrapper *::-webkit-scrollbar-button {
+  width: 8px;
+  height:100%;
+}
+#fb_quick_share_ext-spotlight_wrapper *::-webkit-scrollbar-track {
+  background:#eee;
+  border: thin solid lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+  /*border-radius:10px;*/
+}
+#fb_quick_share_ext-spotlight_wrapper *::-webkit-scrollbar-thumb {
+  background:#999;
+  border: thin solid gray;
+  border-radius:10px;
+}
+#fb_quick_share_ext-spotlight_wrapper *::-webkit-scrollbar-thumb:hover {
+  background:#7d7d7d;
+}
+
+#fb_quick_share_ext-spotlight_wrapper {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    right: 50%;
+    display: block;
+    width: 628px;
+    margin: auto;
+    z-index: 90000000;
+
+    -webkit-transform: translate(-50%, -25%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */ /* IE 9 */
+    transform: translate(-50%, -25%); /* IE 10, Fx 16+, Op 12.1+ */
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    box-shadow: 0 25px 60px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+#fb_quick_share_ext-spotlight_wrapper.close{
+    opacity: 0;
+    -webkit-transform: translate(-50%, -25%) scale(1.2);
+            transform: translate(-50%, -25%) scale(1.2);
+    visibility: visible;
+    pointer-events: none;
+}
+
+#fb_quick_share_ext-spotlight_wrapper >*{
+    width: 100%;
+}
+
+#fb_quick_share_ext-spotlight {
+    position: relative;
+    display: block;
+    height: 56px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #000;
+    background-color: #f8f5f4;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjIuNyAyMi41IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyMi43IDIyLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxjaXJjbGUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjY2NzY2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgY3g9IjguMSIgY3k9IjguNCIgcj0iNi44Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjY2NzY2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjEzLjIiIHkxPSIxMi45IiB4Mj0iMjEuNSIgeTI9IjIxLjQiLz48L3N2Zz4=);
+    background-position: left 17px center;
+    background-repeat: no-repeat;
+    background-size: 3.5%;
+    padding: 0 52px;
+
+    box-sizing: border-box;
+    z-index: 2
+}
+
+#fb_quick_share_ext-autofill_result{
+    position: relative;
+
+    /*reset style*/
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    /*margin: 0;*/
+
+    /*style*/
+    border-radius: 0 0 5px 5px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*border: 1px solid rgba(0, 0, 0, 0.2);*/
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    max-height: 50vh;
+    opacity: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition: max-height 0.3s, opacity 0.3s;
+    transition: max-height 0.3s, opacity 0.3s;
+
+}
+#fb_quick_share_ext-autofill_result.close{
+    max-height: 0px;
+    opacity: 0;
+}
+
+#fb_quick_share_ext-autofill_result li + li{
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#fb_quick_share_ext-autofill_result li{
+    padding: 10px 10px;
+    box-sizing: border-box;
+    -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s, background-color 0.2s, -webkit-transform 0.2s;
+    background: white;
+    color: #3a3a3a;
+    cursor: pointer
+}
+
+#fb_quick_share_ext-autofill_result li:hover{
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    background-color: #f8f5f4;
+}
+#fb_quick_share_ext-autofill_result li >img{
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+}
+#fb_quick_share_ext-autofill_result li >*{
+    vertical-align: middle
+}
+
+#fb_quick_share_ext-spotlight:-moz-placeholder {
+    color: #666666;
+}
+#fb_quick_share_ext-spotlight::-moz-placeholder {
+    color: #666666;
+}
+#fb_quick_share_ext-spotlight:-ms-input-placeholder {
+    color: #666666;
+}
+#fb_quick_share_ext-spotlight::-webkit-input-placeholder {
+    color: #666666;
+}
+
+#fb_quick_share_ext-desc {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 40%;
+    box-sizing: border-box;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #666666;
+}

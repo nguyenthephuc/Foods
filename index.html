@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tìm ưu đãi, khuyến mãi ăn uống xung quanh bạn</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/ngDialog-theme-default.min.css">
+        <link rel="stylesheet" href="css/ngDialog.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="app" ng-controller="indexController" class="ng-cloak">
+        <div class="container">
+            <br>
+            <div class="row" id="equalize">
+                <div class="col-md-3" ng-if="foods" ng-repeat="item in foods track by $index">
+                    <div class="thumbnail img-responsive">
+                        <img ng-src="{{'https://media.meete.co/cache/400x250/'+item.avatar}}" alt="...">
+                        <div class="caption">
+                            <h4 class="limit" ng-bind="item.name"></h4>
+                            <small class="limit" ng-bind="item.title"></small>
+                            <small class="limit" ng-bind="item.address"></small>
+                            <p><a href="javascript:void(0)" ng-click="viewDetail(item.slug, item.title, item.id)" class="btn btn-default" role="button">chi tiết</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contextMenu" class="context-menu">
+            <ul>
+                <li ng-click="contextMenuAction('find')">Tìm nhanh <small class="hot_key">Ctrl + F</small></li>
+                <li ng-click="contextMenuAction('refresh')">Làm mới <small class="hot_key">Ctrl + R</small></li>
+                <li ng-click="contextMenuAction('province')">Đổi thành phố <small class="hot_key">Ctrl + H</small></li>
+                <li class="separator"></li>
+                <li ng-click="contextMenuAction('exit')">Exit <small class="hot_key">Ctrl + Q</small></li>
+                <li ng-click="contextMenuAction('about')">About foods <small class="hot_key">Ctrl + B</small></li>
+            </ul>
+        </div>
+
+        <div id="fb_quick_share_ext-spotlight_wrapper" class="{{is_show_find}}">
+            <input ng-change="autoComplete()" ng-model="keyword" id="fb_quick_share_ext-spotlight" type="text" placeholder="Tìm kiếm nhanh">
+            <ul id="fb_quick_share_ext-autofill_result" class="{{is_show_result}}"></ul>
+        </div>
+
+        <script type="text/ng-template" id="externalTemplate.html">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail">
+                        <img ng-if="detail.rest.avatar" ng-src="{{'https://media.meete.co/cache/750x470/'+detail.rest.avatar}}" class="img-responsive" alt="Image">
+                        <div class="caption">
+                            <h3 style="color: #ef5350">{{detail.rest.name}}</h3>
+                            <h4 style="color: #8bc34a">{{countdown_time}}</h4>
+                            <hr>
+                            <p><b>Giờ mở cửa:</b> {{detail.rest.opening}}</p>
+                            <p><b>Khoảng giá:</b> {{detail.rest.pricing}}</p>
+                            <p><b>Liên hệ:</b> {{detail.rest.phone}} gặp <b>{{detail.rest.contactName}}</b></p>
+                            <p><b>Email:</b> {{detail.rest.business.email}}</p>
+                            <hr>
+                            <p><i class="glyphicon glyphicon-map-marker"></i> {{detail.rest.address}}, {{detail.rest.district.name}}, {{detail.rest.province.name}}</p>
+                            <strong ng-bind-html="detail.deal.bodyHtml | unsafe"></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="about.html">
+            <div class="row ">
+                <div class="col-md-12">
+                    <center>
+                        <h3>Foods</h3>
+                        <small>Ứng dụng tìm ưu đãi, khuyến mãi ăn uống xung quanh bạn, hỗ trợ tại các thành phố lớn trong nước.</small><br><hr>
+                        <small>Copyright &copy; 2017 The Phuc</small><br>
+                        <small>Version: 1.0</small>
+                    </center>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="changeProvince.html">
+            <div class="row ">
+                <div class="col-md-12">
+                    <center>
+                        <h3>Vui lòng chọn thành phố</h3>
+                        <button ng-click="changeProvince('ho-chi-minh')" type="button" class="btn btn-danger">Hồ Chí Minh</button>
+                        <button ng-click="changeProvince('ha-noi')" type="button" class="btn btn-danger">Hà Nội</button>
+                    </center>
+                </div>
+            </div>
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jQuery.equalHeights.js"></script>
+        <script type="text/javascript" src="js/ngDialog.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+    <script>require('./renderer.js');</script>
+</html>

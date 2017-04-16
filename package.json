@@ -1,0 +1,26 @@
+{
+  "name": "Foods",
+  "version": "1.0.0",
+  "description": "Tìm ưu đãi, khuyến mãi ăn uống xung quanh bạn",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=img/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=\"The Phuc\" --version-string.FileDescription=\"Tìm ưu đãi, khuyến mãi ăn uống xung quanh bạn\" --version-string.ProductName=\"Foods\"",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "The Phuc",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-builder": "^17.0.0",
+    "electron-packager": "^8.6.0"
+  }
+}
